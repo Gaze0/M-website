@@ -1,0 +1,262 @@
+@import '../../styles/yo/usage/core/reset.scss';
+.cinema-wrap{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    .top-bar{
+        display: flex;
+        height: 0.44rem;
+        @include border(0 0 1px 0,#e6e6e6);
+        background: #f5f5f5;
+        align-items: center;
+        .city-entry{
+            flex: 1;
+            padding-left: .15rem;
+            height: 0.2rem;
+            display: flex;
+            // @include ellipsis(null,1);
+            align-items: center;
+            .city-name{
+                max-width: 19.2vw;
+                font-size: .15rem;
+                color: #666;
+                @include ellipsis(null,1);
+            }
+            .city-entry-arrow{
+                width: 0;
+                height: 0;
+                border: 4px solid #b0b0b0;
+                border-left-color: transparent;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+                display: inline-block;
+                margin-left: .04rem;
+                margin-top: .05rem;
+            }
+        }
+        .search-entry{
+            width: 2.49rem;
+            height: 0.28rem;
+            background: #fff;
+            border-radius: .05rem;
+            @include border(0.5px,#e6e6e6);
+            margin: 0 0.15rem 0 0.18rem;
+            text-align: center;
+            line-height: 0.28rem;
+            img{
+                width: 0.14rem;
+                height: 0.14rem;
+                margin-left: .03rem;
+                margin-right: .04rem;
+            }
+            span{
+                font-size: .13rem;
+                color: #b2b2b2;
+            }
+        }
+    }
+    .content-wrap{
+        flex: 1;
+        overflow: hidden;
+        padding-right: .15rem;
+        .content{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            .nav{
+                width: 100%;
+                height: 0.4rem;
+                background: #fff;
+                display: flex;
+                .item {
+                    flex: 1;
+                    text-align: center;
+                    line-height: .4rem;
+                    position: relative;
+                    @include ellipsis(null, 1);
+                    font-size: .13rem;
+                    color: #777;
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        height: 0.2rem;
+                        top: .1rem;
+                        left: 0;
+                        border-left: 1px solid #e8e8e8;
+                    }
+                }
+                .drop {
+                    display: inline-block;
+                    position: absolute;
+                    top: .18rem;
+                    width: 0;
+                    height: 0;
+                    margin-left: .04rem;
+                    border: 4px solid transparent;
+                    border-top-color: #b0b0b0;
+                }
+            }
+            .cinema-list{
+                // min-height: 6.02rem;
+                overflow-y: scroll;
+                flex: 1;
+                background: #fff;
+                .list-wrap{
+                    .list{
+                        // height: 1.24rem;
+                        margin-left: .15rem;
+                        padding: .13rem .15rem .13rem 0;
+                        display: flex;
+                        flex-direction: column;
+                        background: #fff;
+                        @include border(0 0 1px 0);
+                        .title-block{
+                            flex: 1;
+                            
+                            .title{
+                                display: flex;
+                                height: 0.23rem;
+                                line-height: .23rem;
+                                font-size: .16rem;
+                                color: #000;
+                               
+                                >p{
+                                    flex: 1;
+                                    @include ellipsis(null, 1);
+                                }
+                                .price-wrap{
+                                    // padding-top: .09rem;
+                                    padding-left: .03rem;
+                                    .price{
+                                        font-size: .18rem;
+                                        color: #f03d37;
+                                    }
+                                    .q{
+                                        margin-left: .03rem;
+                                        font-size: .11rem;
+                                        color: #f03d37;
+                                    }
+                                }
+                            }
+                            .location{
+                                margin-top: .06rem;
+                                font-size: .13rem;
+                                color: #666;
+                                line-height: 1.5;
+                                display: flex;
+                                .address{
+                                    flex: 1;
+                                    @include ellipsis(null,1)
+                                }
+                                .distance{
+                                    margin-left: .05rem;
+                                }
+                            }
+                            .lable-block{
+                                margin: .04rem 0;
+                                height: 0.17rem;
+                                line-height: .17rem;
+                                overflow: hidden;
+                                // font-size: 0;
+                                display: flex;
+                                div{
+                                    padding: 0 0.03rem;
+                                    border-radius: .02rem;
+                                    font-size: .12rem;
+                                    align-items: center;
+                                }
+                                .allowRefund{
+                                    color: #589daf;
+                                    @include border(1px,#589daf);
+                                }
+                                .endorse{
+                                    margin-left: .05rem;
+                                    color: #589daf;
+                                    @include border(1px,#589daf);
+                                }
+                                .snack,.vip-tag{
+                                    margin-left: .05rem;
+                                    color: #f90;
+                                    @include border(1px,#f90);
+                                }
+                                .hall-type{
+                                    margin-left: .05rem;
+                                    color: #589daf;
+                                    @include border(1px,#589daf);
+                                }
+                            }
+                            .discount{
+                                color: #999;
+                                margin-bottom: .04rem;
+                                height: 0.21rem;
+                                display: flex;
+                                .card{
+                                    width: 0.15rem;
+                                    height: 0.14rem;
+                                    position: relative;
+                                    top: .03rem;
+                                    img{
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                }
+                                .text{
+                                    font-size: .11rem;
+                                    margin-left: .05rem;
+                                }
+                            }
+                            .discount-block{
+                                color: #999;
+                                margin-bottom: .04rem;
+                                height: 0.21rem;
+                                display: flex;
+                                .card{
+                                    width: 0.15rem;
+                                    height: 0.14rem;
+                                    position: relative;
+                                    top: .03rem;
+                                    img{
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                }
+                                .text{
+                                    font-size: .11rem;
+                                    margin-left: .05rem;
+                                }
+                            }
+                        }
+                        .min-show-block{
+                            padding-right: .15rem;
+                            margin-right: -.15rem;
+                            line-height: 1.5;
+                            font-size: 0;
+                            height: 0.18rem;
+                            // background: rebeccapurple;
+                            display: flex;
+                            >span{
+                                font-size: .12rem;
+                                color: #999;
+                            }
+                            .time-line{
+                                display: block;
+                                margin-left: .07rem;
+                                width: 0.38rem;
+                                text-align: right;
+                                @include border(0 0 0 1px,#e1e1e1);
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}

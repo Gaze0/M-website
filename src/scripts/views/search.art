@@ -1,0 +1,31 @@
+<div id="content-warp">
+    <header>
+        <div class="back" onclick="javascript:window.history.back();return false;">
+            <i class="icon-back"></i>
+        </div>
+        <h1>猫眼电影</h1>
+    </header>
+    <div class="search-wrap">
+        <div class="search-header">
+            <div class="inp-wrap">
+                <img src="https://s0.meituan.net/bs/?f=myfe/canary:/static/deploy/images/search.png" alt=""
+                    class="search-icon">
+                <input type="text" class="search-input" placeholder="搜电影、搜影院">
+                <img src="https://s0.meituan.net/bs/?f=myfe/canary:/static/deploy/images/close.png" class="del-search"
+                    alt="">
+            </div>
+            <div class="cancel">取消</div>
+        </div>
+        <div class="search-history"></div>
+        <div class="search-result">
+
+        </div>
+
+        <div class="search-cinema-wrap">
+            <div class="cinema-wrap">
+
+            </div>
+        </div>
+    </div>
+
+</div>

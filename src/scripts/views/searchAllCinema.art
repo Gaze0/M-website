@@ -1,0 +1,34 @@
+<div class="result">
+   {{each List}}
+    <div class="list" data-id={{$value.id}}>
+        <div class="title-block">
+            <div class="title">
+                {{$value.nm}}
+                <span class="price-wrap">
+                    <span class="price">{{$value.sellPrice}}</span>
+                    <span class="q">元起</span>
+                </span>
+            </div>
+
+            <div class="location">
+                <div class="address">{{$value.addr}}</div>
+                <div class="distance">{{$value.distance}}</div>
+            </div>
+            <div class="lable-block">
+                {{if $value.sell}}
+                <div class="sell">座</div>
+                {{/if}}
+                {{if $value.allowRefund !=0}}
+                <div class="allowRefund">退</div>
+                {{/if}}
+                {{if $value.endorse !=0}}
+                <div class="endorse">改签</div>
+                {{/if}}
+                {{if $value.snack!=0}}
+                <div class="snack">小吃</div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+   {{/each}}
+</div>

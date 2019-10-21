@@ -1,0 +1,19 @@
+<div id="content-warp">
+    <header>
+        <div class="back">
+            <i class="icon-back"></i>
+        </div>
+        <h1>猫眼电影</h1>
+    </header>
+    <div class="search-wrap">
+        <div class="search-movie-result">
+
+        </div>
+        <div class="cinema-result-wrap">
+            <div class="cinema-result">
+
+            </div>
+        </div>
+
+    </div>
+</div>

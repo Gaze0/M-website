@@ -1,0 +1,13 @@
+<div class="MoveList">
+    <div class="refresh">
+        <img src="/assets/images/arrow.png" alt="">
+        <p>下拉刷新...</p>
+    </div>
+    <div class="Moves">
+
+    </div>
+    <div class="addMore">
+        <img src="/assets/images/arrow.png" alt="">
+        <p>上拉加载更多...</p>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+
+    {{each exportList}}
+    <div class="expected-item">
+        <div class="poster">
+            <img src={{$value.img}} alt="">
+            <span class="wish">{{$value.wish}}人想看</span>
+            <div class="toggle-wish"><span></span></div>
+        </div>
+        <h5 class="name">{{$value.nm}}</h5>
+        <p class="data">{{$value.comingTitle}}</p>
+    </div>
+    {{/each}}

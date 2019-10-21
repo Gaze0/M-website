@@ -1,0 +1,263 @@
+html,
+body {
+    font-size: 50px;
+}
+
+.content-wrap {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    header {
+        width: 100%;
+        height: 1.01rem;
+        background: #df2d2d;
+        display: flex;
+
+        .nav-left {
+            width: 1.05rem;
+            height: 100%;
+            line-height: 1.01rem;
+            display: inline-block;
+            text-align: center;
+            color: #fff;
+
+            a {
+                height: 1rem;
+                width: 0.45em;
+                line-height: 1rem;
+                padding: 0 .3rem;
+                display: inline-block;
+                text-align: center;
+
+                i {
+                    width: 0.45rem;
+                    height: 0.45rem;
+                    vertical-align: middle;
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: -.07rem;
+                        top: .2rem;
+                        width: .4rem;
+                        height: .4rem;
+                        border-bottom: .04rem solid #fff;
+                        border-left: .04rem solid #fff;
+                        transform: scaleY(0.7) rotateZ(45deg);
+                    }
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: .38rem;
+                        left: -.07rem;
+                        border-bottom: .04rem solid #fff;
+                        height: 0;
+                        width: 0.45rem;
+                    }
+                }
+            }
+        }
+
+        h1 {
+            flex: 1;
+            font-size: .36rem;
+            font-weight: lighter;
+            text-align: center;
+            line-height: 1rem;
+            color: #fff;
+            @include ellipsis(null, 1);
+        }
+    }
+
+    .login {
+        height: 3.43rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .nav {
+            width: 100%;
+            height: 0.81rem;
+            @include border(0 0 1px 0, #d6d6d6);
+            ul {
+                display: flex;
+                padding: 0 .2rem 0 .2rem;
+                list-style: none;
+                border-bottom: .08rem solid #d6d6d6;
+                height: 100%;
+                align-items: center;
+                text-align: center;
+
+                li {
+                    flex: 1;
+                    height: 100%;
+                    line-height: 0.81rem;
+                    font-size: .25rem;
+                    color: #000;
+                    align-items: center;
+                    position: relative;
+                    .active {
+                        position: absolute;
+                        width: 100%;
+                        bottom: -.08rem;
+                        left: 0;
+                        height: .08rem;
+                        transition: .5s;
+                        background: #FFC300;
+                    }
+                }
+                
+
+            }
+        }
+
+        .form{
+            flex: 1;
+            background: #fff;
+            .inp-wrap{
+                padding-left: .2rem;
+                @include border(0 0 1px 0,#d6d6d6);
+                input{
+                    padding-left: .2rem;
+                    display: block;
+                    border: 0;
+                    width: 100%;
+                    height: 0.6rem;
+                    line-height: 1;
+                    font-size: .3rem;
+                    padding: 0;
+                }
+                input:focus{
+                    background: #dcdcdc;
+                }
+                
+                .user{
+                    padding: .13rem .20rem .13rem 0;
+                    @include border(0 0 1px 0,#d6d6d6)
+                }
+                .paddword{
+                    padding: .13rem .20rem .13rem 0;
+                }
+            }
+            .btn-wrap{
+                margin: .28rem .2rem 0 .2rem;
+                button{
+                    text-align: center;
+                    height: 0.6rem;
+                    font-size: .28rem;
+                    background: #df2d2d;
+                    color: #fff;
+                    border: 0;
+                    width: 100%;
+                    display: block;
+                    border-radius: .05rem;
+                }
+            }
+            
+        }
+        .form2{
+            display: none;
+            flex: 1;
+            .inp-wrap{
+                padding-left: .2rem;
+                @include border(0 0 1px 0,#d6d6d6);
+
+                .user{
+                    padding: .13rem .20rem .13rem 0;
+                    @include border(0 0 1px 0,#d6d6d6);
+                    display: flex;
+                    input{
+                        flex: 1;
+                        padding-left: .2rem;
+                        display: block;
+                        border: 0;
+                        height: 0.6rem;
+                        line-height: 1;
+                        font-size: .3rem;
+                        padding: 0;
+                        border-radius: .1rem;
+                    }
+                    input:focus{
+                        background: #dcdcdc;
+                    }
+                    .btn{
+                        // margin: .15rem;
+                        margin-left: .3rem;
+                        padding: 0 .3rem;
+                        height: 0.6rem;
+                        width: 2rem;
+                        vertical-align: middle;
+                        box-sizing: border-box;
+                        border: 0;
+                        border-radius: .1rem;
+                        font-size: .28rem;
+                        line-height: .6rem;
+                        color: #999;
+                    }
+                }
+                .paddword{
+                    padding: .13rem .20rem .13rem 0;
+                    .message{
+                        width: 100%;
+                        background: #dcdcdc;
+                    }
+                    input{
+                        padding-left: .2rem;
+                        display: block;
+                        border: 0;
+                        height: 0.6rem;
+                        line-height: 1;
+                        font-size: .3rem;
+                        padding: 0;
+                        border-radius: .1rem;
+                    }
+                    input:focus{
+                        background: #dcdcdc;
+                    }
+                }
+            }
+            .btn-wrap{
+                margin: .28rem .2rem 0 .2rem;
+                button{
+                    text-align: center;
+                    height: 0.6rem;
+                    font-size: .28rem;
+                    background: #dcdcdc;
+                    color: #fff;
+                    border: 0;
+                    width: 100%;
+                    display: block;
+                    border-radius: .05rem;
+                }
+            }
+        }
+
+    }
+    .subline{
+        margin: .28rem .2rem;
+        display: flex;
+        justify-content: space-between;
+        li{
+            list-style: none;
+            font-size: .26rem;
+            a{
+                color: #FE8C00;
+            }
+        }
+    }
+    footer{
+        padding: 0 .2rem .4rem .2rem;
+        font-size: .28rem;
+        p{
+            text-align: center;
+            span{
+                color: #df2d2d;
+            }
+        }
+    }
+}

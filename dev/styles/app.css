@@ -1,0 +1,1397 @@
+@charset "UTF-8";
+/**
+ * Yo框架全局base定义
+ * 本文件与variables不同地方在于，这里所定义的map可以使用在variables和任何地方
+ * lib中map使用“_”开头，本文件中不使用"_"
+ * base ⇌ extra
+ */
+/**
+ * Yo框架全局base定义
+ * 本文件与variables不同地方在于，这里所定义的map可以使用在variables和任何地方
+ * 本文件中map使用"_"开头，extra中不使用"_"
+ * base ⇌ extra
+ */
+/**
+ * 合并base和extra中的同类base map
+ * 用以解决业务方升级Yo时需比base和extra的一致性
+ * 当extra为空时，base map将以base文件里的定义作为默认值
+ * 当extra不为空时，base map使用extra文件里的定义
+ */
+/**
+ * Yo框架全局Variables
+ * Yo基础变量map，如果不想定义某属性，将其value设置为null；
+ * Yo仅使用2种长度单位：px用于边框，rem用于除边框之外的所有地方
+ * variables中map使用“_”开头，本文件中不使用"_"
+ * variables ⇌ config
+ */
+/**
+ * Yo框架全局Variables
+ * Yo基础变量map，如果不想定义某属性，将其value设置为null
+ * Yo仅使用2种长度单位：px用于边框，rem用于除边框之外的所有地方
+ * 本文件中map使用"_"开头，config中不使用"_"
+ * variables ⇌ config
+ */
+/**
+ * 合并variables和config中的同类map
+ * 用以解决业务方升级Yo时需比config和variables的一致性
+ * 当config为空时，使用variables中的map作为默认值
+ * 当config不为空时，使用config中的定义
+ */
+/**
+ * Yo框架自定义全局函数
+ * 扩充Sass默认函数库，用以增强语法
+ */
+/**
+ * @module List扩展函数
+ * @description 返回SassList中的第一项
+ * @function first
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 返回SassList中的最后一项
+ * @function last
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 返回SassList中的倒数第几项
+ * @function nth-last
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {Integer} $index 指定需要返回的值在list中的倒数位置 <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 移除SassList中的某个项目并返回新的List
+ * @function remove
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {String} $value 指定需要被删除的值 <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 截取SassList中的某个部分并返回新的List
+ * @function slice
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {Integer} $start 指定需要截取的开始下标 <2.1.0>
+ * @param {Integer} $end 指定需要截取的结束下标（不包括end），当该值缺省时默认为末尾下标 <2.1.0>
+ */
+/**
+ * @module List扩展函数
+ * @description 从SassList中添加/删除项目，然后返回新的List。
+ * @function splice
+ * @version 2.1.0
+ * @param {String} $list 指定一个Sass List <2.1.0>
+ * @param {Integer} $index 指定需要移除的开始下标 <2.1.0>
+ * @param {Integer} $count 指定需要移除的数量，不可以为负值，0表示不移除 <2.1.0>
+ * @param {String} $values 指定需要添加的新值（可以是多个），如果该值缺省，则表示只移除不添加新值 <2.1.0>
+ */
+/**
+ * Yo框架全局基础方法
+ * 包括响应式方案，CSS3兼容性方案，厂商前缀方案，iconfont方案，flex布局等全局方法
+ */
+/**
+ * @module 常用方法
+ * @description 给需要的属性加厂家前缀
+ * @method prefix
+ * @version 1.0.0
+ * @param {String} $property 指定属性 <1.0.0>
+ * @param {String} $value 指定属性值 <1.0.0>
+ * @skip
+ */
+/**
+ * @module 常用方法
+ * @description 定义字体图标
+ * @method _iconfont
+ * @version 1.0.0
+ * @skip
+ */
+/**
+ * @module 常用方法
+ * @description 四则运算(系统要求：iOS6.0+,Android4.4+)
+ * @method calc
+ * @version 1.7.0
+ * @param {String} $property 指定需要进行计算的CSS属性 <1.7.0>
+ * @param {String} $value 与原生CSS语法一致，区别在于需要使用引号包裹表达式 <1.7.0>
+ * @example
+ * .calc {
+ *     @include calc(width, "100% - 100px");
+ * }
+ *
+ * <div class="calc">四则运算</div>
+ */
+/**
+ * @module 常用方法
+ * @description 定义响应式方案
+ * @method responsive
+ * @version 1.0.0
+ * @param {String} $media 指定媒体查询条件，取值为`config`文件map `media-types`中的值 <1.0.0>
+ */
+/**
+ * @module 常用方法
+ * @description 清除浮动方案
+ * @method clearfix
+ * @version 1.0.0
+ * @param {String} $type 指定清除浮动的方式，包括：pseudo-element | bfc，默认值：pseudo-element <1.8.5>
+ */
+/**
+ * @module 常用方法
+ * @description 清除行内级元素间间隙方案
+ * @method clearspace
+ * @version 3.0.3
+ * @param {Length} $font-size 指定子元素字号，默认值：.14rem <3.0.3>
+ * @example
+ * .demo {
+ *     @include clearspace;
+ * }
+ *
+ * <div class="demo">
+ *      <span class="item">1</span>
+ *      <span class="item">2</span>
+ *      <span class="item">3</span>
+ * </div>
+ */
+/**
+ * @module 常用方法
+ * @description 描述元素内容在横、纵方向上的对齐方式，默认为水平垂直居中对齐
+ * @method align
+ * @version 2.0.0
+ * @param {String} $flexbox 元素布局方式，可选值：flex | inline-flex，默认值：flex <2.0.0>
+ * @param {Keyword} $justify-content 元素内容的水平对齐方式，取值与`justify-content`属性一致，默认值：center <2.0.0>
+ * @param {Keyword} $align-items 元素内容的垂直对齐方式，取值与`align-items`属性一致，默认值：center <2.0.0>
+ * @example
+ * .demo {
+ *     @include align;
+ * }
+ *
+ * <div class="demo">
+ *      <img alt="未知尺寸图片居中" />
+ * </div>
+ */
+/**
+ * @module 常用方法
+ * @description 定义是否有滚动条
+ * @method overflow
+ * @version 1.0.0
+ * @param {String} $overflow 取值与最新原生语法一致，默认值：auto <1.0.0>
+ */
+/**
+ * @module 常用方法
+ * @description 生成全屏方法
+ * @method fullscreen
+ * @version 1.7.0
+ * @param {Integer} $z-index 指定层叠级别 <1.7.0>
+ * @param {Keywords} $position 指定定位方式，取除`static | relative`之外的值，默认值：absolute <1.8.5>
+ */
+/**
+ * @module 用户界面
+ * @description 定义使用何种滤镜
+ * @method filter
+ * @version 1.7.0
+ * @param {String} $filter 取值与`filter`属性一致 <1.7.0>
+ */
+/**
+ * @module 用户界面
+ * @description 定义UA默认外观
+ * @method appearance
+ * @version 1.0.0
+ * @param {String} $appearance 取值与`appearance`属性一致，默认值：none <1.0.0>
+ */
+/**
+ * @module 用户界面
+ * @description 定义如何选中内容
+ * @method user-select
+ * @version 1.0.0
+ * @param {String} $user-select 取值与`user-select`属性一致，默认值：none <1.0.0>
+ */
+/**
+ * @module 用户界面
+ * @description 定义盒模型
+ * @method box-sizing
+ * @version 1.0.0
+ * @param {String} $box-sizing 指定盒模型类型，取值与`box-sizing`属性一致，默认值：border-box <1.0.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义渐变色值
+ * @method gradient
+ * @version 1.0.0
+ * @param {String} $type 指定渐变的4种类型：linear, repeating-linear, radial, repeating-radial <1.0.0>
+ * @param {String} $dir 指定渐变方向，可选值：[left | right] || [top | bottom] | angle <2.0.0>
+ * @param {String} $gradient 指定渐变取值，与w3c最新原生语法一致 <1.0.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义背景图像缩放（AndroidBrowser2.3.*还需要厂商前缀）
+ * @method background-size
+ * @version 1.4.0
+ * @param {Keywords | Length} $background-size 指定背景图缩放值，取值与`background-size`属性一致 <1.4.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义背景裁减（AndroidBrowser2.3.*还需要厂商前缀）
+ * @method background-clip
+ * @version 1.6.0
+ * @param {Keywords} $background-clip 指定背景图缩放值，取值与`background-clip`属性一致 <1.6.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义背景显示区域（AndroidBrowser2.3.*还需要厂商前缀）
+ * @method background-origin
+ * @version 1.6.0
+ * @param {Keywords} $background-origin 指定背景图`background-position`属性计算相对的参考点，取值与`background-origin`属性一致 <1.6.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 为元素添加边框（包括1px边框）
+ * @method border
+ * @version 2.0.0
+ * @param {String} $border-width 指定边框厚度（单位为px），默认值：1px，取值与`border-width`属性一致，不同方向代表边框位置 <2.0.0>
+ * @param {String} $border-color 指定边框颜色 <2.0.0>
+ * @param {String} $border-style 指定边框样式 <2.0.0>
+ * @param {String} $radius 指定边框圆角半径，默认值：null <2.0.0>
+ */
+/**
+ * @module 背景与边框
+ * @description 定义圆角，用于修复某些安卓机型上“圆角+边框+背景”，背景溢出的情况
+ * @method border-radius
+ * @version 1.6.0
+ * @param {Length} $border-radius 指定元素的圆角半径，取值与`border-radius`属性一致 <1.6.0>
+ */
+/**
+ * @module Transform
+ * @description 定义简单变换
+ * @method transform
+ * @version 1.0.0
+ * @param {String} $transform 取值范围与`transform`属性一致 <1.0.0>
+ */
+/**
+ * @module Transform
+ * @description 定义变换原点
+ * @method transform-origin
+ * @version 1.0.0
+ * @param {Length | Percentage | Keywords} $transform-origin 取值范围与`transform-origin`属性一致 <1.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定某元素的子元素是（看起来）位于三维空间内，还是在该元素所在的平面内被扁平化
+ * @method transform-style
+ * @version 2.0.0
+ * @param {String} $transform-style 取值范围与`transform-style`属性一致 <2.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定观察者与「z=0」平面的距离，使具有三维位置变换的元素产生透视效果。「z>0」的三维元素比正常大，而「z<0」时则比正常小，大小程度由该属性的值决定。
+ * @method perspective
+ * @version 2.0.0
+ * @param {none | Length} $perspective 取值范围与`perspective`属性一致 <2.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定透视点的位置
+ * @method perspective-origin
+ * @version 2.0.0
+ * @param {Length | Percentage | Keywords} $perspective-origin 取值范围与`perspective-origin`属性一致 <2.0.0>
+ */
+/**
+ * @module Transform
+ * @description 指定元素背面面向用户时是否可见
+ * @method backface-visibility
+ * @version 2.0.0
+ * @param {Keywords} $backface-visibility 取值范围与`backface-visibility`属性一致 <2.0.0>
+ */
+/**
+ * @module Animation
+ * @description 定义动画
+ * @method animation
+ * @version 1.0.0
+ * @param {String} $animation 取值与原生语法一致 <1.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定需要引用的动画名称
+ * @method animation-name
+ * @version 3.0.0
+ * @param {String} $animation-name 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画运行一次所持续的时长
+ * @method animation-duration
+ * @version 3.0.0
+ * @param {String} $animation-duration 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画运行方式
+ * @method animation-timing-function
+ * @version 3.0.0
+ * @param {String} $animation-timing-function 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画延迟多久之后再开始
+ * @method animation-delay
+ * @version 3.0.0
+ * @param {String} $animation-delay 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画循环几次
+ * @method animation-iteration-count
+ * @version 3.0.0
+ * @param {String} $animation-iteration-count 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画的运动方向
+ * @method animation-direction
+ * @version 3.0.0
+ * @param {String} $animation-direction 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画的运动状态
+ * @method animation-play-state
+ * @version 3.0.0
+ * @param {String} $animation-play-state 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Animation
+ * @description 指定动画时间之外的状态
+ * @method animation-fill-mode
+ * @version 3.0.0
+ * @param {String} $animation-fill-mode 取值与原生语法一致 <3.0.0>
+ */
+/**
+ * @module Transition
+ * @description 定义补间
+ * @method transition
+ * @version 1.0.0
+ * @param {String} $transition 取值与原生语法一致 <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义显示类型为伸缩盒
+ * @method flexbox
+ * @version 1.0.0
+ * @param {String} $flexbox 默认值：flex，可选值：flex | inline-flex <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义伸缩盒子元素如何分配空间
+ * @method flex
+ * @version 1.0.0
+ * @param {Number} $flex 取值与`flex`属性一致，默认值：1 <1.0.0>
+ * @param {String} $direction 默认值: row，可选值：row | column <1.5.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义伸缩盒子元素的排版顺序
+ * @method order
+ * @version 1.0.0
+ * @param {Integer} $order 取值与`order`属性一致，默认值：1 <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性盒子元素流动方向及遇见边界时是否换行(要求系统：iOS7.0+, Android4.4+)
+ * @method flex-flow
+ * @version 2.0.0
+ * @param {String} $flex-flow 取值与`flex-flow`属性一致，默认值：row nowrap <2.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义伸缩盒子元素的流动方向
+ * @method flex-direction
+ * @version 1.0.0
+ * @param {String} $flex-direction 取值与`flex-direction`属性一致，默认值：row <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性盒子元素溢出后排版(要求系统：iOS7.0+, Android4.4+)
+ * @method flex-wrap
+ * @version 1.0.0
+ * @param {String} $flex-wrap 取值与`flex-wrap`属性一致，默认值：nowrap <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性容器主轴对齐方式(其中`space-around`值需要iOS7.0+,Android4.4+)
+ * @method justify-content
+ * @version 1.0.0
+ * @param {String} $justify-content 取值与`justify-content`属性一致，默认值：center <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义多行弹性容器侧轴对齐方式(要求系统：iOS7.0+,Android4.4+)
+ * @method align-content
+ * @version 1.8.5
+ * @param {String} $align-content 取值与`align-content`属性一致，默认值：center <1.8.5>
+ */
+/**
+ * @module Flexbox
+ * @description 定义单行弹性容器侧轴对齐方式
+ * @method align-items
+ * @version 1.0.0
+ * @param {String} $align-items 取值与`align-items`属性一致，默认值：center <1.0.0>
+ */
+/**
+ * @module Flexbox
+ * @description 定义弹性容器中子元素自身的在侧轴对齐方式(要求系统：iOS7.0+,Android4.4+)
+ * @method align-self
+ * @version 1.0.0
+ * @param {String} $align-self 取值与`align-self`属性一致，默认值：center <1.0.0>
+ */
+/**
+ * @module 形状
+ * @description 生成矩形方法
+ * @method rect
+ * @version 1.0.0
+ * @param {Length} $width 定义矩形的长度 <1.0.0>
+ * @param {Length} $height 定义矩形的高度 <1.0.0>
+ */
+/**
+ * @module 形状
+ * @description 生成正方形方法
+ * @method square
+ * @version 1.0.0
+ * @param {Length} $size 定义正方形的边长 <1.0.0>
+ */
+/**
+ * @module 形状
+ * @description 生成圆形方法
+ * @method circle
+ * @version 1.0.0
+ * @param {Length} $size 定义圆的半径长度 <1.0.0>
+ * @param {Length} $radius 定义圆的圆角半径长度 <1.0.0>
+ */
+/**
+ * @module 常用方法
+ * @description 在自适应宽度情况下，确保内容元素的宽高比固定，比如：实现随屏幕大小而变化的正方形。
+ * @method fixed-scale
+ * @version 3.0.10
+ * @param {Length} $width 默认值：100%。用以指定内容元素的初始宽度，由于尺寸需动态变化，不要使用固定单位 <3.0.10>
+ * @param {Length} $scale 默认值：1/1，即正方形。用以指定内容元素的宽度高比 <3.0.10>
+ */
+/**
+ * @module 文本
+ * @description 链接处理方法
+ * @method link
+ * @version 1.0.0
+ * @param {Color} $color 定义链接颜色 <1.0.0>
+ */
+/**
+ * @module 文本
+ * @description 文本碰到边界是否换行
+ * @method wrap
+ * @version 1.0.0
+ * @param {Boolean} $is-wrap 定义文本是否换行，默认值：true <2.0.0>
+ */
+/**
+ * @module 文本
+ * @description 单行文本溢出时显示省略号
+ * @method ellipsis
+ * @version 1.0.0
+ * @param {Length} $width 定义容器的宽度，默认值：null <2.0.0>
+ * @param {Integer} $line-clamp 定义需要显示的行数，默认值：1（即使用单行溢出的处理方案），需要注意的是本参数只支持webkit内核 <2.1.2>
+ */
+/**
+ * @module 文本
+ * @description 文字隐藏方案
+ * @method texthide
+ * @version 1.0.0
+ * @param {Length} $width 定义容器的宽度，默认值：null <2.0.0>
+ */
+/**
+ * Yo框架全局Reset
+ * Yo重置Mobile及高级浏览器上常见的差异
+ */
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+html,
+body {
+  overflow: hidden;
+  height: 100%; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+html {
+  background-color: #eee;
+  color: #212121;
+  font-size: 100px;
+  -webkit-user-select: none;
+  user-select: none; }
+
+body {
+  margin: 0;
+  font-size: 0.14em;
+  line-height: 1.5;
+  font-family: Helvetica Neue, Helvetica, STHeiTi, sans-serif; }
+
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+p,
+blockquote,
+th,
+td,
+pre,
+xmp {
+  margin: 0;
+  padding: 0; }
+
+input,
+textarea,
+button,
+select,
+pre,
+xmp,
+tt,
+code,
+kbd,
+samp {
+  line-height: inherit;
+  font-family: inherit; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+big,
+input,
+textarea,
+button,
+select {
+  font-size: inherit; }
+
+address,
+cite,
+dfn,
+em,
+i,
+optgroup,
+var {
+  font-style: normal; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  text-align: left; }
+
+ul,
+ol,
+menu {
+  list-style: none; }
+
+fieldset,
+img {
+  border: 0;
+  vertical-align: middle; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "\0020"; }
+
+textarea,
+pre,
+xmp {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+
+textarea {
+  resize: vertical; }
+
+input,
+textarea,
+button,
+select,
+summary,
+a {
+  outline: 0 none; }
+
+input,
+textarea,
+button,
+select {
+  color: inherit; }
+  input:disabled,
+  textarea:disabled,
+  button:disabled,
+  select:disabled {
+    opacity: 1; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]::-webkit-file-upload-button,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none; }
+
+::-webkit-details-marker {
+  display: none; }
+
+mark {
+  background-color: rgba(0, 0, 0, 0); }
+
+a,
+ins,
+s,
+u,
+del {
+  text-decoration: none; }
+
+a,
+img {
+  -webkit-touch-callout: none; }
+
+a {
+  color: #00afc7; }
+
+.g-clear::after,
+.g-mod::after {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  height: 0;
+  content: "\0020"; }
+
+@font-face {
+  font-family: yofont;
+  src: url(//ss.qunarzz.com/yo/font/1.0.3/yofont.woff) format("woff"), url(//ss.qunarzz.com/yo/font/1.0.3/yofont.ttf) format("truetype"); }
+
+.yo-ico {
+  font-family: yofont !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle; }
+
+#root {
+  height: 100%; }
+
+@font-face {
+  font-family: 'yofont';
+  src: url("/assets/icons/iconfont.woff") format("woff"), url("/assets/icons/iconfont.ttf") format("truetype"); }
+
+#content-warp {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+  #content-warp header {
+    height: 0.505rem;
+    background: #e54847;
+    position: relative;
+    border-bottom-color: #e54847; }
+    #content-warp header::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      content: "\0020";
+      border-color: #ccc;
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        #content-warp header::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        #content-warp header::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        #content-warp header::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+    #content-warp header h1 {
+      height: 100%;
+      font-size: 0.18rem;
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+      line-height: 0.5rem; }
+  #content-warp main {
+    flex: 1;
+    overflow-y: hidden; }
+  #content-warp footer {
+    height: 0.48rem;
+    background: #fff;
+    position: relative; }
+    #content-warp footer::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      content: "\0020";
+      border-color: #ccc;
+      border-style: solid;
+      border-width: 1px 0 0 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        #content-warp footer::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        #content-warp footer::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        #content-warp footer::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+    #content-warp footer ul {
+      display: flex; }
+      #content-warp footer ul li {
+        flex: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        color: #333; }
+        #content-warp footer ul li.active {
+          color: #ff2e62; }
+        #content-warp footer ul li i {
+          display: block;
+          height: 0.28rem;
+          font-size: .28rem;
+          line-height: .3rem; }
+        #content-warp footer ul li span {
+          margin-top: 0.03rem;
+          display: block;
+          height: 0.12rem;
+          font-size: 0.1rem; }
+
+.main-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+  .main-wrap .download {
+    height: 0.61rem;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    position: relative; }
+    .main-wrap .download::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      content: "\0020";
+      border-color: #ccc;
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        .main-wrap .download::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        .main-wrap .download::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        .main-wrap .download::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+    .main-wrap .download .logo {
+      min-width: 0.42rem;
+      height: 0.42rem;
+      margin: 0 0.06rem 0 0.11rem;
+      background: url("https://p0.meituan.net/moviemachine/08d3ecf9c6fa9964c85d1f23b8d8fcb87541.png") no-repeat;
+      background-size: contain; }
+    .main-wrap .download .info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden; }
+      .main-wrap .download .info .title {
+        font-size: 0.15rem;
+        color: #333;
+        font-weight: 600; }
+      .main-wrap .download .info .content {
+        font-size: 0.11rem;
+        color: #666;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+    .main-wrap .download .btn {
+      display: flex;
+      min-width: 0.96rem;
+      height: 0.42rem;
+      justify-content: center;
+      background: #f03d37;
+      color: #fff;
+      font-size: 0.13rem;
+      align-items: center;
+      margin-right: 0.06rem;
+      border-radius: 0.21rem; }
+      .main-wrap .download .btn::after {
+        content: "";
+        width: 0.19rem;
+        height: 0.19rem;
+        margin-left: 0.05rem;
+        background: url("http://p0.meituan.net/moviemachine/89857785f50685578fa61e1883251da95640.png") no-repeat;
+        background-size: contain;
+        animation: changeScale 3s ease-in-out infinite; }
+  .main-wrap .top-bar {
+    height: 0.44rem;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6; }
+    .main-wrap .top-bar .city-entry {
+      padding-left: 0.15rem;
+      font-size: 0.15rem;
+      display: flex;
+      align-items: center;
+      color: #666; }
+      .main-wrap .top-bar .city-entry .city-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #333;
+        font-weight: 500;
+        font-size: 0.15rem;
+        max-width: 19.2vw; }
+      .main-wrap .top-bar .city-entry .city-arrow {
+        width: 0;
+        height: 0;
+        display: block;
+        border: 4px solid #b0b0b0;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        margin: 0.05rem 0 0 0.04rem; }
+    .main-wrap .top-bar .switch-hot {
+      display: flex;
+      line-height: 0.44rem;
+      height: 0.44rem;
+      position: relative; }
+      .main-wrap .top-bar .switch-hot .hot-item {
+        font-size: 0.15rem;
+        width: 21.33333vw;
+        text-align: center;
+        margin: 0 0.12rem;
+        font-weight: 700;
+        color: #666;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+        .main-wrap .top-bar .switch-hot .hot-item a {
+          color: #666; }
+      .main-wrap .top-bar .switch-hot .active {
+        color: #ef4238; }
+        .main-wrap .top-bar .switch-hot .active:before {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -0.01rem;
+          width: 21.33333vw;
+          height: 0.02rem;
+          background-color: #ef4238;
+          transition: left .2s; }
+    .main-wrap .top-bar .search {
+      width: 0.45rem;
+      height: 0.40rem;
+      padding: 0.1rem 0.15rem 0.1rem 0.1rem;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAABC1JREFUWAntWEtrU1EQPpO+ArYm1Y1I3VRXgu5EoSpVQaxCxUVxYTeCv8CtoFVxW0F/gBsLiguxoBaxWHyLS0EEdWWobrRprZC+cpzv3NyTOfeR3DS3duOF5M6ZMzPflzmvOVHq/9NcBqhRdz001D43UziktR5k35382ao1bUUcIj3NL3w+EtH4xu6eZ3Tv3iL6VvskJjh/vH/Lcql0UZM6o7TamAiQ1BxpNdaazV7pfDT1I5FPwKguQT0w0FFcLF5QSp9nYhsC/smapP5wfkfz7flr9PjxQjInz6omQZO1hdJ9rdW+RoLG2RKpt60d2VONZDOW4PyRA7uX9NJDBuuJACzwhHuQ0ZmHPNe+dm1qxbxTv38t83zU28tUPqG0Phnn25ah451P33yIiBtSRRJE5pZKpfchAKJp0vpSbvO2Wzz5V0LRhIIXU8vsz29nNdFlJmsWkegutGWze5JkMkQQc252cWYqYljH850twzT+6rcAqivqwb6u4vzKbTbEqrcPhjvX3t1fb05mrEdFwIIIkSN1I3/w2KlGySEkfOCrVOamxAKGt/ikNiw7GTRDu1D6Elit44bcyEg57J5co0dGMsXnE/fZo5pJXt1tHdkdtYbaySD2OYcczzkzrE2Sw88gjoFYvLjMgjI/jbctg2ka0V+WIE4IswkLOyyI1QyrCOGIiIWYUglMYEudlC1BHF+BE6KA1SqN05ArMQs2Fp9KBtsqXMESrJyt1V7e5+ptJVXj5JKJybGlRwhbdFqCrMPBbx9swraRshAR28GWcJKgs5nihJCGacoRsR1siWUJ+iWT3+kfX347zXcwdhBbYlmCUrkOso7DtAQrxaa1w8FvGykLwdiM/T0OwhJkg+oGyg1UJXFOzeojYjvYMr4k+FF2mJJJKlKUI2I72BLKEsQdQnagnkPJ5OhSaJiYXq1oo4WwbQ+XGL6MC47iO4Tf5ncP6jnRTkWsxKwWwYxpsGOiW4K4feGCI+1QbKKek7pmZMQyBawIAkxgC5UjWoLQ4vbFWeQLTuXhShjFJkolX7Xatym3ULjK6pqxDGaNoA6wV5fRaMB+sPhi4nozJL1a8IlbCxoQGq1VC8LEKVih+Icl/2cu+Xc1XPLDAVdD5loticCcK+Hin/Kn4uF955KsbtjAFj7wNRGcL+qdW5wFTs0nlEHfeg2vnT4EF9e0QoqGc5Ov71hlQIglCLs1uLh/5lnVyyeJ3V9Bkne7M/nJV3cD3EzTWSRBA0xgXA35p151VnfQsF4bOwPHwJwDGY+U5+SRLY8Vj/SdjgpTM4PSwWQzpT+PPDLlsSSZTEzQJ8uTP5W/35KSbJigTzSNdxxJamnpyz15+Q4YNedgGiRqxfAWRnhO6pWy3ZbWlSDIR5EkpV/4P2xdh9gngffs0f17kTmQy02+mZB9/+VmMvAXE7/38O8tTYkAAAAASUVORK5CYII=") no-repeat;
+      background-size: 0.2rem;
+      background-position: 0.1rem; }
+  .main-wrap #Move-list {
+    flex: 1;
+    overflow-y: scroll; }
+
+@keyframes changeScale {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+
+.MoveList .refresh {
+  height: 0.4rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .MoveList .refresh::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+    @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+      .MoveList .refresh::after {
+        width: 100%;
+        height: 100%; } }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      .MoveList .refresh::after {
+        width: 200%;
+        height: 200%;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5); } }
+    @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+      .MoveList .refresh::after {
+        width: 300%;
+        height: 300%;
+        -webkit-transform: scale(0.33333);
+        transform: scale(0.33333); } }
+  .MoveList .refresh img {
+    width: 0.25rem;
+    height: 0.25rem; }
+  .MoveList .refresh p {
+    margin-left: 0.1rem; }
+
+.MoveList .down {
+  transition: .3s;
+  transform: rotateZ(180deg); }
+
+.MoveList .up {
+  transition: .3s;
+  transform: rotateZ(360deg); }
+
+.MoveList .addMore {
+  height: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .MoveList .addMore img {
+    transform: rotateZ(180deg);
+    width: 0.25rem;
+    height: 0.25rem; }
+  .MoveList .addMore p {
+    margin-left: 0.1rem; }
+
+.MoveList .item {
+  width: 100%;
+  height: 1.14rem;
+  padding-left: 0.15rem;
+  background-color: #fff; }
+  .MoveList .item .main-block {
+    background: #fff;
+    height: 100%;
+    display: flex;
+    padding: 0.12rem .3rem 0.12rem 0;
+    position: relative; }
+    .MoveList .item .main-block::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      content: "\0020";
+      border-color: #ccc;
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        .MoveList .item .main-block::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        .MoveList .item .main-block::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        .MoveList .item .main-block::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+    .MoveList .item .main-block .poster {
+      width: 0.64rem;
+      height: 0.9rem;
+      background-size: cover; }
+      .MoveList .item .main-block .poster img {
+        width: 100%;
+        height: 100%;
+        display: block; }
+    .MoveList .item .main-block .info {
+      flex: 1;
+      display: flex;
+      padding-left: .1rem;
+      flex-direction: column;
+      overflow: hidden; }
+      .MoveList .item .main-block .info .title-wrap {
+        height: 0.24rem;
+        margin-bottom: 0.07rem;
+        display: flex; }
+        .MoveList .item .main-block .info .title-wrap .title {
+          height: 0.24rem;
+          font-size: .17rem;
+          color: #333;
+          font-weight: 700;
+          padding-right: .05rem;
+          flex-shrink: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        .MoveList .item .main-block .info .title-wrap .imax {
+          width: 0.43rem;
+          margin-top: 0.05rem;
+          margin-right: 0.03rem;
+          background-size: contain;
+          height: 0.14rem; }
+          .MoveList .item .main-block .info .title-wrap .imax .isimax {
+            display: block;
+            width: 100%;
+            height: 100%; }
+          .MoveList .item .main-block .info .title-wrap .imax .noimax {
+            display: block;
+            height: 100%;
+            width: 0.17rem; }
+      .MoveList .item .main-block .info .move-info {
+        flex: 1; }
+        .MoveList .item .main-block .info .move-info .score {
+          font-size: 0.13rem;
+          color: #666;
+          white-space: nowrap;
+          height: 0.15rem;
+          line-height: 0.15rem; }
+          .MoveList .item .main-block .info .move-info .score span {
+            margin-left: 0.04rem;
+            font-weight: 700;
+            color: #faaf00;
+            font-size: 0.15rem; }
+        .MoveList .item .main-block .info .move-info .actor {
+          margin-top: 0.06rem;
+          line-height: 0.15rem;
+          font-size: 0.13rem;
+          color: #666;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        .MoveList .item .main-block .info .move-info .show-info {
+          margin-top: 0.06rem;
+          line-height: 0.15rem;
+          font-size: 0.13rem;
+          color: #666;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+    .MoveList .item .main-block .btn-wrap {
+      display: flex;
+      height: 100%;
+      width: 0.47rem;
+      align-items: center; }
+      .MoveList .item .main-block .btn-wrap .btn {
+        width: 0.47rem;
+        height: 0.27rem;
+        background: #f03d37;
+        border-radius: 0.03rem;
+        color: #fff;
+        cursor: pointer;
+        font-size: 0.12rem;
+        text-align: center;
+        line-height: 0.27rem; }
+      .MoveList .item .main-block .btn-wrap .btn1 {
+        width: 0.47rem;
+        height: 0.27rem;
+        background: #3c9fe6;
+        border-radius: 0.03rem;
+        color: #fff;
+        cursor: pointer;
+        font-size: 0.12rem;
+        text-align: center;
+        line-height: 0.27rem; }
+
+.coming {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding-right: 0.17rem;
+  overflow-y: scroll; }
+  .coming .most-expected {
+    padding: 0.12rem 0 0.12rem 0.15rem;
+    height: 2.16rem;
+    width: 100%;
+    border-bottom: 0.1rem solid #eee;
+    background: #fff; }
+    .coming .most-expected .title {
+      font-size: 0.14rem;
+      color: #333;
+      margin-bottom: .12rem;
+      height: 0.19rem;
+      line-height: .19rem; }
+    .coming .most-expected .expected-listWrap {
+      width: 100%;
+      overflow-x: scroll;
+      white-space: nowrap; }
+      .coming .most-expected .expected-listWrap .expected-list {
+        display: inline-block; }
+        .coming .most-expected .expected-listWrap .expected-list .expected-item {
+          width: 0.85rem;
+          height: 1.57rem;
+          margin-right: .1rem;
+          display: inline-block;
+          overflow: hidden; }
+          .coming .most-expected .expected-listWrap .expected-list .expected-item .poster {
+            width: 100%;
+            height: 1.2rem;
+            position: relative; }
+            .coming .most-expected .expected-listWrap .expected-list .expected-item .poster img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              margin-bottom: 0.06rem; }
+            .coming .most-expected .expected-listWrap .expected-list .expected-item .poster .wish {
+              position: absolute;
+              left: 0.04rem;
+              bottom: 0.02rem;
+              font-size: 0.11rem;
+              font-weight: 600;
+              color: #faaf00; }
+            .coming .most-expected .expected-listWrap .expected-list .expected-item .poster .toggle-wish {
+              width: 0.28rem;
+              line-height: 0.28rem;
+              background: rgba(61, 63, 71, 0.6);
+              text-align: center;
+              border-bottom-right-radius: 10px;
+              position: absolute;
+              top: 0;
+              left: 0; }
+              .coming .most-expected .expected-listWrap .expected-list .expected-item .poster .toggle-wish span {
+                display: inline-block;
+                width: 0.1rem;
+                height: 0.1rem;
+                background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAoCAYAAACFFRgXAAAABGdBTUEAALGPC/xhBQAAAytJREFUWAnVmLtrFFEUh3cWFAtRE5FEEUREsFAkooUIgl3+CUEU7LVR1LBIMERCLFLZRG1CrFJYpLBQENRGC4n4wBeKRUQ2PlAQX+v3m70z7MzemZ3HZp05cPbce86553w7O7Mzc51KjDQaDYfwDvSAseux69Cv6Ef0LXoHXXAc5y82UqhVJbgLPYhuQTega9DPaB19ht6VpVYDaxUBWYUGewkcQzdbE4LOJabXaHQ76G7OqHWI0RG0v+mJ/XxPdJpaD2xZbcAUX0XiSXS/bUEH3yPil2imL1Chln6RE+huzVPKffJV60frugAwDfoI1tBtrUkpx4vknzVrLmAHU65vTX/F5DzQnzynDwzsCpwX0e1eMIfV+S3ReZpXXlDgFNC/VEgXgifHGXQDVvUE2g1Y1RKT2FxxgTm6cg4bXxHNsGH0j/DhIlKGmFzGKuSbCAyFgkWcDsG6UaeE/m/LIvsEvKcstGIV8ECJgAcErJtFWaRPwCvLQitWAbv3/ZJALwlYj3ZlkbqA9YBRFnkp4HtloRWrgJ+g/uNbgeHF+LTKY5tebWYLDOqhzYpVR1hyE33njor5ITYxNp/WIP/DeBINvI4ooQAipknD6D9eVnC8JjCOxr799vgLiGXcsLmtvVPCnRB4yGDanRTjQ2/PYvIlACwvCTcwM37G/xvMGJYAQRuwoiRex8wFMns7mTMMbV2twMpiwVXMfNuK5XfMm97WTpHAJvsy9pZ15fI41Us9IyUWmG+qPa4ptBe3b/WYMj2zAWsVBfQfPYEGrlbFuiiqPWF6xZaNPcLeSgr9ZjyGLni+LlrVHDM9OpZNBKwqFPyJGUWfa94lUa1RUztRSX9vLVE2SewNrMboaG9NuiYi7w3+M8B+i4hb3amBVQXotRjdxpPsHWtJWLQHfBrYL+FAp3kmYBUFWnu/2u1Mu03wgTXajaxjU0tmYHUCehAj6H7NE4ggBSvoTJL4orNVp/Eifm1eJ/lplXMuD6wYcgGrAAA6H0fQ75pHiGIjJjciJZk7N7DaAKIrvobarnj5aiaHYT7JdQ6HW5sL8Sj+nSb2GHsF2EwXWLi+5v8ArR6xIZ+h44wAAAAASUVORK5CYII=") no-repeat;
+                background-size: 100%; }
+          .coming .most-expected .expected-listWrap .expected-list .expected-item .name {
+            font-size: 0.13rem;
+            color: #222;
+            height: 0.17rem;
+            margin-bottom: .03rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap; }
+          .coming .most-expected .expected-listWrap .expected-list .expected-item .data {
+            font-size: .12rem;
+            height: 0.16rem;
+            color: #999; }
+  .coming .coming-list-wrap {
+    flex: 1; }
+    .coming .coming-list-wrap .coming-list {
+      flex: 1; }
+      .coming .coming-list-wrap .coming-list .group-date {
+        padding: 0.12rem 0.15rem 0 0.15rem; }
+      .coming .coming-list-wrap .coming-list .item {
+        width: 100%;
+        height: 1.14rem;
+        padding-left: 0.15rem;
+        background-color: #fff; }
+        .coming .coming-list-wrap .coming-list .item .main-block {
+          background: #fff;
+          height: 100%;
+          display: flex;
+          padding: 0.12rem .14rem 0.12rem 0;
+          position: relative; }
+          .coming .coming-list-wrap .coming-list .item .main-block::after {
+            pointer-events: none;
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            content: "\0020";
+            border-color: #ccc;
+            border-style: solid;
+            border-width: 0 0 1px 0;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0; }
+            @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+              .coming .coming-list-wrap .coming-list .item .main-block::after {
+                width: 100%;
+                height: 100%; } }
+            @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+              .coming .coming-list-wrap .coming-list .item .main-block::after {
+                width: 200%;
+                height: 200%;
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5); } }
+            @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+              .coming .coming-list-wrap .coming-list .item .main-block::after {
+                width: 300%;
+                height: 300%;
+                -webkit-transform: scale(0.33333);
+                transform: scale(0.33333); } }
+          .coming .coming-list-wrap .coming-list .item .main-block .poster {
+            width: 0.64rem;
+            height: 0.9rem;
+            background-size: cover; }
+            .coming .coming-list-wrap .coming-list .item .main-block .poster img {
+              width: 100%;
+              height: 100%;
+              display: block; }
+          .coming .coming-list-wrap .coming-list .item .main-block .info {
+            flex: 1;
+            display: flex;
+            padding-left: .1rem;
+            flex-direction: column;
+            overflow: hidden; }
+            .coming .coming-list-wrap .coming-list .item .main-block .info .title-wrap {
+              height: 0.24rem;
+              margin-bottom: 0.07rem;
+              display: flex; }
+              .coming .coming-list-wrap .coming-list .item .main-block .info .title-wrap .title {
+                height: 0.24rem;
+                font-size: .17rem;
+                color: #333;
+                font-weight: 700;
+                padding-right: .05rem;
+                flex-shrink: 1;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap; }
+              .coming .coming-list-wrap .coming-list .item .main-block .info .title-wrap .imax {
+                width: 0.43rem;
+                margin-top: 0.05rem;
+                margin-right: 0.03rem;
+                background-size: contain;
+                height: 0.14rem; }
+                .coming .coming-list-wrap .coming-list .item .main-block .info .title-wrap .imax .isimax {
+                  display: block;
+                  width: 100%;
+                  height: 100%; }
+                .coming .coming-list-wrap .coming-list .item .main-block .info .title-wrap .imax .noimax {
+                  display: block;
+                  height: 100%;
+                  width: 0.17rem; }
+            .coming .coming-list-wrap .coming-list .item .main-block .info .move-info {
+              flex: 1; }
+              .coming .coming-list-wrap .coming-list .item .main-block .info .move-info .score {
+                font-size: 0.13rem;
+                color: #666;
+                white-space: nowrap;
+                height: 0.15rem;
+                line-height: 0.15rem; }
+                .coming .coming-list-wrap .coming-list .item .main-block .info .move-info .score span {
+                  margin-left: 0.04rem;
+                  font-weight: 700;
+                  color: #faaf00;
+                  font-size: 0.15rem; }
+              .coming .coming-list-wrap .coming-list .item .main-block .info .move-info .actor {
+                margin-top: 0.06rem;
+                line-height: 0.15rem;
+                height: 0.15rem;
+                font-size: 0.13rem;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                color: #666;
+                white-space: nowrap; }
+              .coming .coming-list-wrap .coming-list .item .main-block .info .move-info .show-info {
+                margin-top: 0.06rem;
+                line-height: 0.15rem;
+                height: 0.15rem;
+                font-size: 0.13rem;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                color: #666;
+                white-space: nowrap; }
+          .coming .coming-list-wrap .coming-list .item .main-block .btn-wrap {
+            display: flex;
+            height: 100%;
+            width: 0.47rem;
+            align-items: center; }
+            .coming .coming-list-wrap .coming-list .item .main-block .btn-wrap .btn {
+              width: 0.47rem;
+              height: 0.27rem;
+              background: #faaf00;
+              border: none;
+              border-radius: 0.03rem;
+              color: #fff;
+              cursor: pointer;
+              font-size: 0.12rem;
+              text-align: center;
+              line-height: 0.27rem; }
+            .coming .coming-list-wrap .coming-list .item .main-block .btn-wrap .btn1 {
+              width: 0.47rem;
+              height: 0.27rem;
+              background: #3c9fe6;
+              border-radius: 0.03rem;
+              color: #fff;
+              cursor: pointer;
+              font-size: 0.12rem;
+              text-align: center;
+              line-height: 0.27rem; }

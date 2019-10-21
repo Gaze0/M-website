@@ -1,0 +1,95 @@
+<div id="detail-warp">
+    <div class="wrap">
+        <header>
+            <div class="back">
+                <i class="icon-back"></i>
+            </div>
+            <h1>猫眼电影</h1>
+        </header>
+        <div class="con">
+            <div class="download">
+                <div class="logo"></div>
+                <div class="info">
+                    <div class="title">猫眼</div>
+                    <div class="content">0 元看电影，天天领现金</div>
+                </div>
+                <div class="btn">
+                    立即领取
+                </div>
+            </div>
+            <div class="move-detail" data-name={{moveInfo.nm}}>
+                <div class="bg">
+                    <img src='{{moveInfo["img"]}}' alt="">
+                </div>
+                <div class="detail">
+                    <div class="poster">
+                        <img src='{{moveInfo["img"]}}' alt="">
+                    </div>
+                    <div class="content">
+                        <div class="title">{{moveInfo['nm']}}</div>
+                        <div class="title-en-name">{{moveInfo['enm']}}</div>
+                        <div class="score">
+                            {{if moveInfo['sc']==0}}
+                            <div style="font-size: 0.14rem;">{{moveInfo['wish']}}人想看</div>
+                            <span class="snum"></span>
+                            {{else}}
+                            {{moveInfo['sc']}}
+                            <span class="snum">({{moveInfo['snum']}}万人评)</span>
+                            {{/if}}
+                        </div>
+                        <div class="move-type">
+                            <span>{{moveInfo['cat']}}</span>
+                            <div class="move-type-group">
+                                {{if moveInfo['version'] == 'v2d imax'}}
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAeCAYAAABwmH1PAAACn0lEQVRYhe2ZUW7TQBCGv0RBrUSl+KW8po/lqTkAknOBCN+gewPCDdwbmBuYGwRxAILEAZoneHRf6QNBAgmJSsvDjOu18TqWnBLV5JdW68zMemd2Z2bH2YG1FuAp8Bw4BUb0C3fALfAZ+Dmw1p4AL4Ane1Xr4fEb+DQCzhFjvwJr4Nc+tXoAHAMXwDPgfIi4MfTTWBCb1vp8OqSI2T4amyO3bTTcqxp7wMHgvqONwVNgBRiHliht0WJ8pLKJhx8ofwXMGuZfqmwdlg3jy7DWzrXhaTMriB3aSmmbhnF5y1R25eEbW2DpkUka+E08t82ttfOuLj2mvPNVRMBkyztyL/kIvATOPDJr5bvzzYBXwM0WPe7R1eDvQNzA3+byU6QoeEvh8sYja3S+BFmUAHFlkIXdbJkL6G5wguxgVMObASFijA/5gqSI8k07da3yY5Vd6vNr5bVCV4NT7et20mgfe8YGyELdIAknf98Ev9EpsoAXyGK+w58Ma9HV4EwVCClnyDPgEonLzDM2QnbIVTjV3jTMufQ8t8IuzuFYe+PQFhVe07jUoWXIIoXUJ6/AkXfjuTV2YXCGKHlJkUwMklVXnjEziuz9DbBOC5VeFyZ53F5RjufW2NXHfgx8UCU2/O2qVRjt31CfXRcqs6jQQmRxY6VFyFGV0K4I6lx4VAuMjfZZhecWHoH+rsrUFRNGf0+dQufMkQucwib6F4WHixjZ2QnluKzCaN/kAe6Z7J63hnIS3FAciSn+0vMeuzQ4RY6YPJn4kLteU+xlSA4IVW6CnAZ1Y66RmB7TvNAADKy1c31+v034kWMOh8/D/uNgcN8xRP6ZB/n/tq840v5uiFxDgHyBHNXLP2ocI9/dALf/3VXLwMpl2gly5dLny7QvwI8/pysRaQplMrsAAAAASUVORK5CYII="
+                                    alt="">
+                                {{else if moveInfo['version'] == 'v3d imax'}}
+                                <img style="width:0.42rem"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAeCAYAAADTsBuJAAAD+0lEQVRoge2aPUwUQRSAPy4YiZh4DbT8VJhIvA4KkyOhBq+Uyi2gFlssPAtoPW01cWm0RaxVTCi0EkOhFXe0WoiJGhJJ1uK9cefW/ZnF3K3R/ZLNDDNvfnhv5s3bvRkIggBgGLgIjACDlPSSE+AT8B74NhAEwXngCnCm0Gn9f/wAdgeBKf5O5T8regI9Ygi4DIwCUxXE7ZT0j2PgneZHKpQ+vwiONR2sFDqNEkoDFExpgIJx9f+TwDJwySprA0+A11bZCjCR0EcbeAp8zDnHKDWgBfj6oH/XgC3Np9EAVoE9TaNUtR+AJrCTMP4R4GkaZUv7iWvfhcsOmAQ2EOW/QZT+BlH0GjBtyU6o3L71gIRcC8B9YN5hzDSqQB0Yt8pqWtZ0aN9S2VpCfUPr68QbaE+fq4QLINr/VcQwO1mTcdkBS8A54B7w3CpfRHbFIqGiDU9i8tPALeAGshsOHMbOywVkVfoJ9Q1gLKMPo/RXiCLHgU6MzJzW2+PNIf/foZZn4rIDZoDvdCsfQtcz7DIQYqR1zS86tsnLF9J3QdyKtqkhL0mbhK7MS5D1dLwWYiTbdTWId02/4WKAReBaTPmspnl8+r7Kz2YJnpIWssIbMXVziFvZTGlvDOQjykxbyeYMuaCyW5q/qXVO5I2C5hGXtIG4n4/A45x9tBGX1gt8TeNWuqdpM6FtFTHcIaHv9hGDerEtpH4T2TV1JMjICgK6OK0BTDS0Tf6ophe+39BBFFJHVrxhHLiO+PVOQtsGsoJtBfqaeiljbiXknchrgDXEJd1CIiFzCOdhMqd8XpqaelbZaqQurZ1vlXUQo0WjLkPVkrfPA2eyDDCMRC+jkfJ9wpWS1wATyKHeKzqI0q4THo4e8gFsJ6HNHGF09BkIrKeu5XFuzfj9O3SfB85khaGTSOTSRsIrm2+I+4kaJ415lX+Ro81paAIvEaUc8btrieJpeo/46GVVZVYjZXXE2E0tayChaYvsiAvINsA+slonkJ1gx/tGmW2XgVR+RfvLe3DnZYcwgjnSvJ8gW0V2yyHJSqsiC9DTfmrAXcTteJach0RAN3QOmbvB5UXsgXa4jvj9AySMNJ8cHsa0WbLyxoWNIspf488/R7jQBB4RuogkPE3TdkiL0AAm5DRtO5bcEbIL3iKGGifjfcDFAM8Rd7OMvJTNaHkbUX70LRi6DdBGFL5t9dUPfMQIVdKVa1Z92mrtIGdIXeXGkGgrrs0eYvDbOoe4d5JfDARBsJAmEMMw/VHiv/qTpGEBTvc5ul8r+L+g/D2gYEoDFExpgIKpIDe1SvrLWU1PKsg1uZL+MUT4a9yn8mpicfwAdgf0cu555IpieTm395jLuR+Arz8BrLjpSMoYSlEAAAAASUVORK5CYII="
+                                    alt="">
+                                {{/if}}
+                            </div>
+                        </div>
+                        <div class="move-time">{{moveInfo['src']}}/{{moveInfo['episodeDur']}}分钟</div>
+                        <div class="play-time">{{moveInfo['pubDesc']}}</div>
+                    </div>
+                </div>
+                <div class="arrow-g">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAWCAYAAAAfD8YZAAAAAXNSR0IArs4c6QAAAS5JREFUOBGVkktuwkAMhpOoJ+hhSouE2HbDgiVCNCAOVtQHnINHhbgMJ6g6/f9gR848kmDJeOzxZ3scskzEOfcKXUMLjXXZByYQhJlqMvz3PM//1E9Z7fJoEp5wXvWZoILRZQtg7xVYdhXQzuR2XoEB/NYCOSkVdKI/g441BnuBbmI7aMAE7ilgxyaboYOD4RMO9EWiTwhgJksBLtEvUNolRmGvwJG+yDNsXSB4s2aplR3M4Y80BnuGfiQ7m0Q2qP6JJvaLc/VpTKx5lPe9IfpibviMb+4lOXYXyGLRsRPgSTsSpASdW8Av+YQ3Er+NzgIuELdvZMcAZIUaBsgpCA55IZIEeV+NLSC32hskXCTAH9xFRyWkUsgSrhqAJfjpL8fch0dMMIGWMkmYEIn8Az5Wgp5LHlhmAAAAAElFTkSuQmCC"
+                        alt="">
+                </div>
+            </div>
+
+            <div class="show-days">
+                <ul class="time-line">
+                    <li class="show-day active">今天{{dateList[0]}}</li>
+                    <li class="show-day">明天{{dateList[1]}}</li>
+                    <li class="show-day">后天{{dateList[2]}}</li>
+                    <li class="show-day">{{dateList[3]}}</li>
+                    <li class="show-day">{{dateList[4]}}</li>
+                    <li class="show-day">{{dateList[5]}}</li>
+                </ul>
+            </div>
+            <div class="nav-wrap">
+                <div class="tab">
+                    <div class="item">
+                        全城
+                        <span class="drop"></span>
+                    </div>
+                    <div class="item">品牌
+                        <span class="drop"></span>
+                    </div>
+                    <div class="item">特色
+                        <span class="drop"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cinema-list">
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

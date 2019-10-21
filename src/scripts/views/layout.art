@@ -1,0 +1,15 @@
+<div id="content-warp">
+    <header>
+        <h1>猫眼电影</h1>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+        <ul>
+            <li data-to='indexList' ><i class="yo-ico">&#xe873;</i><span>热映</span></li>
+            <li data-to='cinema'><i class="yo-ico">&#xe600;</i><span>影院</span></li>
+            <li data-to='mine'><i class="yo-ico">&#xe87d;</i><span>我的</span></li>
+        </ul>
+    </footer>
+</div>

@@ -1,0 +1,28 @@
+{{each showList}}
+<div class="item-wrap">
+        <div class="item">
+            <div class="time">
+                <div class="begin">{{$value.tm}}</div>
+                <div class="end">{{$value.end}} <span class="tui">散场</span></div>
+            </div>
+            <div class="info">
+                <div class="lan">{{$value.lang}}  {{$value.tp}}</div>
+                <div class="hall">{{$value.th}}</div>
+            </div>
+            <div class="price">
+                <div class="sellPr">
+                    <span class="d">¥</span>
+                    <span class="stonefont">39.9</span>
+                </div>
+                <div class="vip-price">
+                    <span class="icon">折扣卡</span>
+                    <span class="num">¥{{$value.vipPrice}}</span>
+                </div>
+                <div class="extraDesc">{{$value.extraDesc}}</div>
+            </div>
+            <div class="btn-wrap">
+                <div class="btn">购票</div>
+            </div>
+        </div>
+</div>
+{{/each}}

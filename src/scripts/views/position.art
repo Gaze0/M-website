@@ -1,0 +1,26 @@
+<div class="main-wrap">
+    <div class="download">
+        <div class="logo"></div>
+        <div class="info">
+            <div class="title">猫眼</div>
+            <div class="content">0 元看电影，天天领现金</div>
+        </div>
+        <div class="btn">
+            立即领取
+        </div>
+    </div>
+    <div class="top-bar">
+        <div class="city-entry" data-name = '/#allCityList'>
+            <div class="city-name">上海</div>
+            <i class="city-arrow"></i>
+        </div>
+        <div class="switch-hot">
+            <div data-to='/#indexList' class="hot-item">正在热映</div>
+            <div data-to='/#upComing' class="hot-item" >即将上映</div>
+        </div>
+        <div class="search" data-to="search">
+            
+        </div>
+    </div>
+    <div id="Move-list"></div>
+</div>
