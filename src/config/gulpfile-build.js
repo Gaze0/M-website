@@ -18,7 +18,7 @@ function copyHTML(){
     .pipe(dest(buildPath))
     // .pipe(connect.reload())
 }
-// revCollector() 将[`${buildPath}/rev/**/*.json`, '../*.html'] 传进去 改html中的css，js
+//  revCollector 将`${buildPath}/rev/**/*.json`, '../*.html' 传进去 改html中的css，js
 
 function packSCSS(){
     return src('../styles/*.scss')
@@ -28,8 +28,7 @@ function packSCSS(){
         .pipe(dest(`${buildPath}/styles/`))
         .pipe(rev.manifest())
         .pipe(dest(`${buildPath}/rev/styles/`))
-        // .pipe(connect.reload())
-}
+    }
 
 //rev()生成hash码
 //rev.manifest()映射作用
