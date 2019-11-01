@@ -45,8 +45,20 @@ class Detail{
             var m = date.getMinutes() + ':';
             var s = date.getSeconds();
             if(i>=3){
+                if(D<10){
+                    D = '0'+D
+                }
+                if(M<10){
+                    M='0'+M
+                }
                 return '周'+ starday +M+D+'日';
             }else{
+                if(D<10){
+                    D = '0'+D
+                }
+                if(M<10){
+                    M='0'+M
+                }
                 return M+D+'日';
             }
             
